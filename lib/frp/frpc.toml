@@ -1,0 +1,10 @@
+serverAddr = "frp.freefrp.net"
+serverPort = 8_080
+token = "freefrp.net"
+
+[[proxies]]
+name = "5684e788-ab0d-4ab4-b836-045109aa5af9"
+type = "tcp"
+local_ip = "127.0.0.1"
+local_port = "3000"
+remote_port = "25262"
