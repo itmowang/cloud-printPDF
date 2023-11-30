@@ -1,9 +1,10 @@
-serverAddr = "127.0.0.1"
-serverPort = 7000
+serverAddr = "8.219.84.164"
+serverPort = 5443
+auth.token = "013580724422"
 
 [[proxies]]
-name = "test-tcp"
+name = "7d35d7ff-46c5-441f-ba63-3b51d53d132e"
 type = "tcp"
-localIP = "127.0.0.1"
-localPort = 22
-remotePort = 6000
+local_ip = "127.0.0.1"
+local_port = 8000
+remote_port = 25060

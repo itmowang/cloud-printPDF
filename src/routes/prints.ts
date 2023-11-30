@@ -5,8 +5,11 @@ const { PDFDocument, rgb } = require("pdf-lib");
 const { v4: uuidv4 } = require("uuid"); // 导入uuid模块
 const http = require("http");
 
-const firstImg = (localFilePath: string, folderPath: string) => {
+const firstImg = (localFilePath: string, folderPath: string) => { 
   return new Promise((resolve, reject) => {
+
+
+
     const inputFilePath = localFilePath; // 替换为你的输入文件路径
     const outputFilePath = folderPath + "/example.pdf"; // 替换为你的输出文件路径
     const cropX = 0; // 左边裁剪的点坐标
@@ -15,6 +18,7 @@ const firstImg = (localFilePath: string, folderPath: string) => {
     const cropHeight = 800; // 裁剪的高度
 
     const run = async () => {
+      const fs = require("fs")
       // 读取输入 PDF 文件
       const existingPdfBytes = fs.readFileSync(inputFilePath);
 

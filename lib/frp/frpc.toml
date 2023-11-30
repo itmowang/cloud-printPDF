@@ -1,10 +1,9 @@
-serverAddr = "frp.freefrp.net"
-serverPort = 8_080
-token = "freefrp.net"
+serverAddr = "127.0.0.1"
+serverPort = 7000
 
 [[proxies]]
-name = "5684e788-ab0d-4ab4-b836-045109aa5af9"
+name = "test-tcp"
 type = "tcp"
-local_ip = "127.0.0.1"
-local_port = "3000"
-remote_port = "25262"
+localIP = "127.0.0.1"
+localPort = 22
+remotePort = 6000

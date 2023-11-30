@@ -7,6 +7,10 @@
     "build": "tsc",
     "test": "tsc && node ./bin/copyFileFrp.ts && node ./lib/src"
   },
+  "volta": {
+    "node": "20.10.0",
+    "pnpm": "8.11.0"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -27,5 +31,9 @@
     "prompts": "^2.4.2",
     "typescript": "^5.2.2",
     "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "ts-node": "^10.9.1"
   }
 }

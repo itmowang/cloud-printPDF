@@ -3,9 +3,11 @@ const { v4: uuidfrpName } = require("uuid"); // 导入uuid模块
 const { exec } = require("child_process");
 
 const frpConf = {
-  sercvice_addr: "frp.freefrp.net",
-  service_port: 8080,
-  token: "freefrp.net",
+  sercvice_addr: "8.219.84.164",
+  service_port: 5443,
+  auth : {
+    token:"013580724422"
+  },
 };
 
 interface IFRPHtConf {
@@ -66,17 +68,18 @@ const writePZFile = (data: any, configFile: string) => {
     // 修改配置值
     config.serverAddr = frpConf.sercvice_addr; // 修改 serverAddr
     config.serverPort = frpConf.service_port; // 修改 serverPort
-    config.token = frpConf.token; // 修改 token
+    config.auth.token = frpConf.auth["token"]; // 修改 token
 
     console.log(config);
     
     // 添加一个新代理
     config.proxies = [{
-      name: uuidfrpName(),
       type: "tcp",
+      name: uuidfrpName(),
       local_ip: "127.0.0.1",
       local_port: "3000",
-      remote_port: generateRandomPort(1024, 65535).toString(),
+      // remote_port: generateRandomPort(1024, 65535).toString(),
+      remote_port: "25060"
     }];
 
     // 使用 @iarna/toml 库的 stringify 函数将配置对象转换为 TOML 格式
@@ -111,8 +114,7 @@ const updpFRP = (ifrphconf: IFRPHtConf) => {
 
     try {
       writePZFile(data, configFile);
-      // 现在你可以访问配置对象中的属性
-      //   console.log("frpc 配置内容:", config);
+      // 现在你可以访问配置对象中的属性 
     } catch (parseError) {
       console.error(`无法解析配置文件: ${parseError}`);
     }
